@@ -1,20 +1,15 @@
-const express = require('express');
+const express = require("express");
 const tagsRouter = express.Router();
-const { getAllTags } = require('../db');
+const { getAllTags } = require("../db");
 
-
-tagsRouter.get('/', async (req, res) => {
+tagsRouter.get("/", async (req, res) => {
   const tags = await getAllTags();
 
   res.send({
-    tags
+    tags,
   });
 });
 
-tagsRouter.get('/', (req, res) => {
-  res.send({
-    "tags": []
-  });
-});
+
 
 module.exports = tagsRouter;

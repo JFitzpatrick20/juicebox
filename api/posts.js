@@ -1,19 +1,18 @@
-const express = require('express');
+const express = require("express");
 const postsRouter = express.Router();
-const { getAllPosts } = require('../db');
+const { getAllPosts } = require("../db");
 
-
-postsRouter.get('/', async (req, res) => {
+postsRouter.get("/", async (req, res) => {
   const posts = await getAllPosts();
 
   res.send({
-    posts
+    posts,
   });
 });
 
-postsRouter.get('/', (req, res) => {
+postsRouter.get("/", (req, res) => {
   res.send({
-    "posts": []
+    posts: [],
   });
 });
 
